@@ -37,16 +37,22 @@ export default function Home({ allPostsData }) {
                   {tag ? <small className={utilStyles.tag}>{tag}</small> : null}
                 </div>
               </li>
-              <hr />
+              <hr className={utilStyles.hr} />
             </>
           ))}
         </ul>
       </section>
       <footer>
-        <ul className={utilStyles.list}>
+        <ul className={utilStyles.listFlex}>
           <li className={utilStyles.listItem}>
             <a href="https://brunormferreira.github.io" target="_blank">
               Site
+            </a>
+          </li>
+          <span className={utilStyles.separator}>|</span>
+          <li className={utilStyles.listItem}>
+            <a href="https://github.com/brunormferreira" target="_blank">
+              Github
             </a>
           </li>
         </ul>

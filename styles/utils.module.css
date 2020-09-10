@@ -43,6 +43,13 @@
   margin: 0;
 }
 
+.listFlex {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
 .listItem {
   margin: 0 0 1.25rem;
 }
@@ -64,4 +71,14 @@
   padding: 4px 8px;
   font-size: 12px;
   color: #6d6d6d;
+}
+
+.hr {
+  color: #999;
+  border-top: 1px dashed #999;
+}
+
+.separator {
+  color: #999;
+  margin: 0px 4px;
 }
