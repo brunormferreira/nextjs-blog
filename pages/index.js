@@ -24,21 +24,19 @@ export default function Home({ allPostsData }) {
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title, tag }) => (
-            <>
-              <li className={utilStyles.listItem} key={id}>
-                <Link href="/posts/[id]" as={`/posts/${id}`}>
-                  <a>{title}</a>
-                </Link>
-                <br />
-                <div className={utilStyles.flex}>
-                  <small className={utilStyles.lightText}>
-                    <Date dateString={date} />
-                  </small>
-                  {tag ? <small className={utilStyles.tag}>{tag}</small> : null}
-                </div>
-              </li>
+            <li className={utilStyles.listItem} key={id}>
+              <Link href="/posts/[id]" as={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              <div className={utilStyles.flex}>
+                <small className={utilStyles.lightText}>
+                  <Date dateString={date} />
+                </small>
+                {tag ? <small className={utilStyles.tag}>{tag}</small> : null}
+              </div>
               <hr className={utilStyles.hr} />
-            </>
+            </li>
           ))}
         </ul>
       </section>
