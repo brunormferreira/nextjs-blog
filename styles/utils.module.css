@@ -21,6 +21,15 @@
   margin: 1rem 0;
 }
 
+.headingLg::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background: #28d0d6;
+}
+
 .headingMd {
   font-size: 1.2rem;
   line-height: 1.5;
