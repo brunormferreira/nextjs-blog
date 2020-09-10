@@ -16,6 +16,7 @@
 }
 
 .headerHomeImage {
+  box-shadow: 4px 4px 16px 4px #ccc;
   width: 8rem;
   height: 8rem;
 }
