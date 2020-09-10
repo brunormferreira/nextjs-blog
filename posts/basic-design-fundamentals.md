@@ -33,3 +33,7 @@ experience that the user (UX) will have when using its interface.
 
 **Visual Design:** As we all liked, we couldn't miss the beauty of the interface, combining
 colors, typography, illustrations and whatever is necessary for your interface to be beautiful and attractive.
+
+Thanks for reading.
+
+See you soon!
