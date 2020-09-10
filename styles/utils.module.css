@@ -66,11 +66,27 @@
 }
 
 .tag {
-  background: #ceeafff2;
+  background: #0097fb;
   border-radius: 22px;
   padding: 4px 8px;
   font-size: 12px;
-  color: #6d6d6d;
+  color: #ffffff;
+}
+
+.tag1 {
+  background: #994cf5;
+  border-radius: 22px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.tag2 {
+  background: #fd0085;
+  border-radius: 22px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #ffffff;
 }
 
 .hr {
@@ -81,4 +97,8 @@
 .separator {
   color: #999;
   margin: 0px 4px;
+}
+
+.vercel {
+  height: 1rem;
 }

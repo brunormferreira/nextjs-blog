@@ -9,6 +9,14 @@ import { getSortedPostsData } from '../lib/posts'
 import utilStyles from '../styles/utils.module.css'
 
 export default function Home({ allPostsData }) {
+  const renderTag = (tag) => {
+    if (tag === 'Development')
+      return <small className={utilStyles.tag}>{tag}</small>
+    else if (tag === 'Design')
+      return <small className={utilStyles.tag1}>{tag}</small>
+    else return <small className={utilStyles.tag2}>{tag}</small>
+  }
+
   return (
     <Layout home>
       <Head>
@@ -33,7 +41,7 @@ export default function Home({ allPostsData }) {
                 <small className={utilStyles.lightText}>
                   <Date dateString={date} />
                 </small>
-                {tag ? <small className={utilStyles.tag}>{tag}</small> : null}
+                {renderTag(tag)}
               </div>
               <hr className={utilStyles.hr} />
             </li>
@@ -54,6 +62,23 @@ export default function Home({ allPostsData }) {
             </a>
           </li>
         </ul>
+        <hr />
+        <div className={utilStyles.flex}>
+          <a
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by{' '}
+          </a>
+          <div>
+            <img
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              className={utilStyles.vercel}
+            />
+          </div>
+        </div>
       </footer>
     </Layout>
   )
