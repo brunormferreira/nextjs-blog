@@ -1,6 +1,7 @@
 ---
 title: 'What is the Basics of the Design Fundamentals?'
 date: '2020-09-10'
+tag: 'Design'
 ---
 
 I have been studying UI Design, so I prepare a list of Design Principles for you!

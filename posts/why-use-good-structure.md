@@ -1,6 +1,7 @@
 ---
 title: 'Why to Use a Good Project Structure?'
 date: '2020-09-01'
+tag: 'Development'
 ---
 
 Sometimes we had an project to work on, and make adjusts, or improove some features, its really relative what we should do on everyday, so the title says everyting.

@@ -50,3 +50,18 @@
 .lightText {
   color: #999;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.tag {
+  background: #ceeafff2;
+  border-radius: 22px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #6d6d6d;
+}
