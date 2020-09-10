@@ -1,6 +1,6 @@
 ---
 title: 'Why did I resolve to study UX UI Design?'
-date: '2020-09-10'
+date: '2020-09-09'
 ---
 
 Lately I have been operating on several projects, making adjustments, creating new features,
