@@ -9,7 +9,6 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  background-color: #fafafa;
 }
 
 * {
@@ -28,4 +27,55 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* TOGGLE CHECKBOX */
+.switch {
+  height: 34px;
+  position: relative;
+  width: 60px;
+  float: right;
+  margin: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #0f141b;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: '';
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #ccc;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
