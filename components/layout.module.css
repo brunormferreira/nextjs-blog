@@ -24,3 +24,13 @@
 .backToHome {
   margin: 3rem 0 0;
 }
+
+.background {
+  background: var(--bgColor);
+}
+
+.dark-bg {
+  background: var(--bgColor);
+
+  /* TO ADD PROPS */
+}

@@ -3,19 +3,12 @@ import Link from 'next/link'
 
 import Layout, { siteTitle } from '../components/layout'
 import Date from '../components/date'
-import Checkbox from '../components/checkbox'
 
 import { getSortedPostsData } from '../lib/posts'
 
 import utilStyles from '../styles/utils.module.css'
-import styles from '../styles/theme.module.css'
-import cn from '../utils/mergeClassNames'
-
-import { useTheme } from '../context/theme/'
 
 export default function Home({ allPostsData }) {
-  const [theme, setTheme] = useTheme()
-
   const renderTag = (tag) => {
     if (tag === 'Development')
       return <small className={utilStyles.tag}>{tag}</small>
@@ -25,77 +18,69 @@ export default function Home({ allPostsData }) {
   }
 
   return (
-    <div
-      className={cn([
-        // theme && styles['dark-bg'],
-        theme ? styles.dark : styles.light,
-      ])}
-    >
-      <Checkbox onChange={() => setTheme(!theme)} />
-      <Layout home>
-        <Head>
-          <title>{siteTitle}</title>
-        </Head>
-        <section className={utilStyles.headingMd}>
-          <p className={utilStyles.p}>
-            Welcome! I'm a jr <u>frontend developer</u> with some knowledge in{' '}
-            <u>UX/UI Design!</u>
-          </p>
-        </section>
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h2 className={utilStyles.headingLg}>Blog</h2>
-          <ul className={utilStyles.list}>
-            {allPostsData.map(({ id, date, title, tag }) => (
-              <li className={utilStyles.listItem} key={id}>
-                <Link href="/posts/[id]" as={`/posts/${id}`}>
-                  <a>{title}</a>
-                </Link>
-                <br />
-                <div className={utilStyles.flex}>
-                  <small className={utilStyles.lightText}>
-                    <Date dateString={date} />
-                  </small>
-                  {renderTag(tag)}
-                </div>
-                <hr className={utilStyles.hr} />
-              </li>
-            ))}
-          </ul>
-        </section>
-        <footer>
-          <ul className={utilStyles.listFlex}>
-            <li className={utilStyles.listItem}>
-              <a href="https://brunormferreira.github.io" target="_blank">
-                Site
-              </a>
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+      <section className={utilStyles.headingMd}>
+        <p className={utilStyles.p}>
+          Welcome! I'm a jr <u>frontend developer</u> with some knowledge in{' '}
+          <u>UX/UI Design!</u>
+        </p>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title, tag }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link href="/posts/[id]" as={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              <div className={utilStyles.flex}>
+                <small className={utilStyles.lightText}>
+                  <Date dateString={date} />
+                </small>
+                {renderTag(tag)}
+              </div>
+              <hr className={utilStyles.hr} />
             </li>
-            <span className={utilStyles.separator}>|</span>
-            <li className={utilStyles.listItem}>
-              <a href="https://github.com/brunormferreira" target="_blank">
-                Github
-              </a>
-            </li>
-          </ul>
-          <hr />
-          <div className={utilStyles.flex}>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Powered by{' '}
+          ))}
+        </ul>
+      </section>
+      <footer>
+        <ul className={utilStyles.listFlex}>
+          <li className={utilStyles.listItem}>
+            <a href="https://brunormferreira.github.io" target="_blank">
+              Site
             </a>
-            <div>
-              <img
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={utilStyles.vercel}
-              />
-            </div>
+          </li>
+          <span className={utilStyles.separator}>|</span>
+          <li className={utilStyles.listItem}>
+            <a href="https://github.com/brunormferreira" target="_blank">
+              Github
+            </a>
+          </li>
+        </ul>
+        <hr />
+        <div className={utilStyles.flex}>
+          <a
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by{' '}
+          </a>
+          <div>
+            <img
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              className={utilStyles.vercel}
+            />
           </div>
-        </footer>
-      </Layout>
-    </div>
+        </div>
+      </footer>
+    </Layout>
   )
 }
 
