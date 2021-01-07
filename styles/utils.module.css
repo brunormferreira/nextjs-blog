@@ -99,6 +99,14 @@
   color: #ffffff;
 }
 
+.tag3 {
+  background: #34833b;
+  border-radius: 22px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #ffffff;
+}
+
 .hr {
   color: #999;
   border-top: 1px dashed #999;

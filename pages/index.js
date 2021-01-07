@@ -14,7 +14,9 @@ export default function Home({ allPostsData }) {
       return <small className={utilStyles.tag}>{tag}</small>
     else if (tag === 'Design')
       return <small className={utilStyles.tag1}>{tag}</small>
-    else return <small className={utilStyles.tag2}>{tag}</small>
+    else if (tag === 'Design - Development')
+      return <small className={utilStyles.tag2}>{tag}</small>
+    else return <small className={utilStyles.tag3}>{tag}</small>
   }
 
   return (
