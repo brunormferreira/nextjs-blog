@@ -1,5 +1,5 @@
 ---
-title: 'When to use Reduce Javascript method?'
+title: 'When to use Javascript Reduce method?'
 date: '2020-12-08'
 tag: 'Development'
 ---

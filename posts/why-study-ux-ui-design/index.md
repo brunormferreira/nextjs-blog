@@ -1,5 +1,5 @@
 ---
-title: 'Why did I resolve to study UX UI Design?'
+title: 'Why did I resolve to study UX/UI Design?'
 date: '2020-09-09'
 tag: 'Design - Development'
 ---
