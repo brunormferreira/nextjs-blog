@@ -1,16 +1,27 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import useTranslation from 'next-translate/useTranslation'
 
-import Layout, { siteTitle } from '../components/layout'
 import Date from '../components/date'
+import Layout, { siteTitle } from '../components/layout'
 
 import { getSortedPostsData } from '../lib/posts'
-
 import utilStyles from '../styles/utils.module.css'
 
 export default function Home({ allPostsData }) {
+  const { t } = useTranslation()
+
+  const router = useRouter()
+  const { locale, locales, defaultLocale } = router
+
+  const changeLanguage = ({ target: { value } }) => {
+    const locale = value
+    router.push(router.pathname, router.asPath, { locale })
+  }
+
   const renderTag = (tag) => {
-    if (tag === 'Development')
+    if (tag === 'Development' || 'Desenvolvimento')
       return <small className={utilStyles.tag}>{tag}</small>
     else if (tag === 'Design')
       return <small className={utilStyles.tag1}>{tag}</small>
@@ -24,11 +35,25 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
+      <section>
+        <div>
+          <div>
+            <p>Current locale: {locale}</p>
+            <p>Default locale: {defaultLocale}</p>
+            <p>Configured locales: {JSON.stringify(locales)}</p>
+          </div>
+        </div>
+        <h2>{t('common:greeting')}</h2>
+
+        <select onChange={changeLanguage} defaultValue={locale}>
+          <option value="en-US">en-US</option>
+          <option value="pt-br">pt-BR</option>
+        </select>
+      </section>
+
       <section className={utilStyles.headingMd}>
-        <p className={utilStyles.p}>
-          Welcome! I'm a frontend developer with some knowledge in UX / UI
-          Design!
-        </p>
+        <p className={utilStyles.p}>{t('common:whoiam')}</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -41,7 +66,7 @@ export default function Home({ allPostsData }) {
               <br />
               <div className={utilStyles.flex}>
                 <small className={utilStyles.lightText}>
-                  <Date dateString={date} />
+                  <Date dateString={date} locale={locale} />
                 </small>
                 {renderTag(tag)}
               </div>
@@ -86,8 +111,8 @@ export default function Home({ allPostsData }) {
   )
 }
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+export const getStaticProps = async ({ locale }) => {
+  const allPostsData = getSortedPostsData(locale)
   return {
     props: {
       allPostsData,

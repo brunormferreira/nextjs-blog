@@ -1,6 +1,14 @@
-import { parseISO, format } from 'date-fns'
+import { format, parseISO } from 'date-fns'
+import enUS from 'date-fns/locale/en-US'
+import pt from 'date-fns/locale/pt-BR'
 
-export default function Date({ dateString }) {
+export const Date = ({ dateString, locale }) => {
   const date = parseISO(dateString)
-  return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
+  return (
+    <time dateTime={dateString}>
+      {format(date, 'LLLL d, yyyy', { locale: locale === 'en-US' ? enUS : pt })}
+    </time>
+  )
 }
+
+export default Date
