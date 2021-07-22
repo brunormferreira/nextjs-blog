@@ -21,11 +21,14 @@ export default function Home({ allPostsData }) {
   }
 
   const renderTag = (tag) => {
-    if (tag === 'Development' || 'Desenvolvimento')
+    if (tag === 'Development' || tag === 'Desenvolvimento')
       return <small className={utilStyles.tag}>{tag}</small>
     else if (tag === 'Design')
       return <small className={utilStyles.tag1}>{tag}</small>
-    else if (tag === 'Design - Development')
+    else if (
+      tag === 'Design - Development' ||
+      tag === 'Design - Desenvolvimento'
+    )
       return <small className={utilStyles.tag2}>{tag}</small>
     else return <small className={utilStyles.tag3}>{tag}</small>
   }
@@ -44,8 +47,6 @@ export default function Home({ allPostsData }) {
             <p>Configured locales: {JSON.stringify(locales)}</p>
           </div>
         </div>
-        <h2>{t('common:greeting')}</h2>
-
         <select onChange={changeLanguage} defaultValue={locale}>
           <option value="en-US">en-US</option>
           <option value="pt-br">pt-BR</option>
@@ -96,7 +97,7 @@ export default function Home({ allPostsData }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Powered by{' '}
+            {t('common:poweredby')}{' '}
           </a>
           <div>
             <img
