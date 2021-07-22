@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import useTranslation from 'next-translate/useTranslation'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
@@ -8,6 +9,7 @@ const name = 'Bruno Ramires'
 export const siteTitle = 'Blog - brunormferreira'
 
 export default function Layout({ children, home }) {
+  const { t } = useTranslation()
   const router = useRouter()
   const { locale } = router
 
@@ -81,7 +83,7 @@ export default function Layout({ children, home }) {
         {!home && (
           <div className={styles.backToHome}>
             <Link href="/">
-              <a>← Back to home</a>
+              <a>{t('common:backToHome')}</a>
             </Link>
           </div>
         )}

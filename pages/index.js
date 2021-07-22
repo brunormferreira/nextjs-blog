@@ -78,7 +78,7 @@ export default function Home({ allPostsData }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t('common:poweredby')}{' '}
+            {t('common:poweredBy')}{' '}
           </a>
           <div>
             <img
