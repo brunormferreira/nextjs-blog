@@ -13,12 +13,7 @@ export default function Home({ allPostsData }) {
   const { t } = useTranslation()
 
   const router = useRouter()
-  const { locale, locales, defaultLocale } = router
-
-  const changeLanguage = ({ target: { value } }) => {
-    const locale = value
-    router.push(router.pathname, router.asPath, { locale })
-  }
+  const { locale } = router
 
   const renderTag = (tag) => {
     if (tag === 'Development' || tag === 'Desenvolvimento')
@@ -38,20 +33,6 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-
-      <section>
-        <div>
-          <div>
-            <p>Current locale: {locale}</p>
-            <p>Default locale: {defaultLocale}</p>
-            <p>Configured locales: {JSON.stringify(locales)}</p>
-          </div>
-        </div>
-        <select onChange={changeLanguage} defaultValue={locale}>
-          <option value="en-US">en-US</option>
-          <option value="pt-br">pt-BR</option>
-        </select>
-      </section>
 
       <section className={utilStyles.headingMd}>
         <p className={utilStyles.p}>{t('common:whoiam')}</p>

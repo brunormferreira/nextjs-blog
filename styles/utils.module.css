@@ -124,3 +124,22 @@
 .p {
   font-family: 'Montserrat';
 }
+
+.select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.content {
+  position: relative;
+}
+
+.content select {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin-right: 30px;
+}

@@ -94,7 +94,7 @@ See the examples:
 
 ---
 
-3
+3.
 
 Tente fazer este [exercício](https://gist.github.com/brunormferreira/db2a20efc9486c2959f4d07042259554) para testar suas habilidades!
 
